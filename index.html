@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alireza Hosseini - Portfolio</title>
+    <style>
+        :root {
+            --clemson-orange: #f56600;
+            --clemson-purple: #522d80;
+            --text-main: #333;
+            --text-light: #ffffff;
+            --bg-gray: #f4f4f4;
+            --panel-bg: #fff7ef;
+        }
+        
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; display: flex; color: var(--text-main); background: var(--bg-gray); }
+
+        /* Sidebar Navigation */
+        nav { width: 260px; background: var(--clemson-purple); color: var(--text-light); height: 100vh; position: fixed; padding-top: 30px; display: flex; flex-direction: column; align-items: center; box-shadow: 4px 0 10px rgba(0,0,0,0.2); }
+        
+        .profile-holder { width: 120px; height: 120px; border-radius: 50%; background: #ccc; border: 3px solid var(--text-light); margin-bottom: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 0.8em; color: #666; }
+        
+        .nav-header { text-align: center; margin-bottom: 30px; width: 100%; }
+        .nav-header h3 { margin: 10px 0 5px; font-size: 1.2em; }
+        
+        nav a { width: 100%; color: var(--text-light); padding: 15px 30px; text-decoration: none; transition: 0.3s; box-sizing: border-box; font-weight: 500; cursor: pointer; }
+        nav a:hover, nav a.active { background: var(--clemson-orange); border-left: 5px solid white; }
+
+        /* Main Content Area */
+        main { margin-left: 260px; width: 100%; min-height: 100vh; background: white; }
+        
+        /* Top Banner Row */
+        .clemson-banner { width: 100%; height: 200px; background: linear-gradient(135deg, var(--clemson-orange), var(--clemson-purple)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; font-weight: bold; overflow: hidden; position: relative; text-align: center; }
+        .clemson-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+        .content-container { padding: 40px; max-width: 900px; }
+        
+        /* Section Management */
+        section { display: none; animation: fadeIn 0.5s; }
+        section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { color: var(--clemson-purple); border-bottom: 2px solid var(--clemson-orange); padding-bottom: 10px; margin-bottom: 25px; }
+        h3 { color: var(--clemson-purple); margin-top: 30px; }
+        .nav-header h3 { color: var(--text-light); }
+        h4 { color: var(--clemson-purple); margin-top: 25px; margin-bottom: 10px; }
+        .entry { margin-bottom: 25px; border-left: 4px solid #eee; padding-left: 15px; }
+        .entry-title { font-weight: bold; color: var(--clemson-purple); }
+        .entry-meta { font-style: italic; font-size: 0.9em; color: #666; }
+        
+        .contact-info { background: var(--panel-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--clemson-orange); margin-top: 30px; }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: relative; }
+            main { margin-left: 0; }
+        }
+	p { 
+    	text-align: justify; 
+    	 /* Optional: keeps a nice gap between paragraphs */
+	}
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="profile-holder">
+        <img src="profile.jpg" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1);">
+    </div>
+    <div class="nav-header">
+        <h3>Alireza M. Hosseini</h3>
+        <small>Ph.D. Student @ Clemson University</small>
+    </div>
+    <a onclick="showPage('about')" id="link-about" class="active">About Me</a>
+    <a onclick="showPage('background')" id="link-background">Background</a>
+    <a onclick="showPage('publications')" id="link-publications">Publications</a>
+    <a onclick="showPage('projects')" id="link-projects">Projects</a>
+</nav>
+
+<main>
+    <div class="clemson-banner">
+        Clemson University | South Carolina
+    </div>
+    <div class="content-container">
+        <section id="about" class="active">
+            <h2>About Me</h2>
+            <p>
+                I am a Ph.D. student at <strong>Clemson University</strong> in South Carolina.
+                My research focuses on modeling and designing efficient content representations and reinforcement learning-based scheduling for delivery to end-users.
+            </p>
+            <p>
+                Beyond my academic pursuits, I am a passionate football fan and have participated in several sports competitions, including swimming. 
+                In my leisure time, I enjoy watching movies and reading books.
+            </p>
+
+            <h4>Research Interests</h4>
+            <ul>
+                <li>Deep Reinforcement Learning</li>
+                <li>Wireless Communication and Networks </li>
+                <li>Multimedia Systems </li>
+            </ul>
+
+            <div class="contact-info">
+                <strong>Contact Me</strong><br>
+                Email: <a href="mailto:amoham4@clemson.edu">amoham4@clemson.edu</a> <br>
+                Phone: +1 (862) 215-1389 <br>
+                Links: <a href="https://scholar.google.com/citations?user=Gx28Bh0AAAAJ&hl=en&authuser=1">Google Scholar</a> | <a href="https://www.linkedin.com/in/alireza-m-hosseini-bb1117200/">LinkedIn</a> 
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+            <div class="entry">
+                <div class="entry-title">LLM/VLM-based Basketball Game Analyzer</div>
+                <p>Developing and integrating LLM and VLM for reasoning in sports analytics.</p>
+            </div>
+            <div class="entry">
+                <div class="entry-title">Resource allocation and scheduling using Deep Reinforcement Learning</div>
+                <p>RL-based scheduling for IoT delay-sensitive applications and streaming systems.</p>
+            </div>
+            <div class="entry">
+                <div class="entry-title">360° and Multi-view Video Processing and DASH Streaming</div>
+                <p>Implementing tiled-based and ROI-based encoding and streaming using tools like FFmpeg, Kvazaar, x265, and Dash.js.</p>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="entry">
+                <div class="entry-title">ISM: Intelligent Multi-Path Scheduler for Multi-Camera Networked Systems</div>
+                <div class="entry-meta">ACM Multimedia Systems Conference (MMSys), 2026 </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">ASL360: AI-Enabled Adaptive Streaming of Layered 360 Video over UAV-assisted Wireless Networks</div>
+                <div class="entry-meta">IEEE Global Communications Conference (GLOBECOM), 2025 </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">Comparative analysis and performance evaluation of adaptive 360° video dash streaming solutions</div>
+                <div class="entry-meta">IEEE International Workshop on Multimedia Signal Processing (MMSP), 2024 </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">Dynamic clustering and RRH selection in non-coherent ultra-dense CRAN with limited fronthaul capacity</div>
+                <div class="entry-meta">Wireless Personal Communications (Springer), 2023 </div>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>Background</h2>
+            <h3>Education</h3>
+            <div class="entry">
+                <div class="entry-title">Clemson University</div>
+                <div class="entry-meta">Ph.D. Student | Clemson, SC | Present </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">Amirkabir University of Technology</div>
+                <div class="entry-meta">M.S. in Electrical Engineering | Tehran, Iran | Sep 2018 – Apr 2021 </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">K. N. Toosi University of Technology</div>
+                <div class="entry-meta">B.S. in Electrical Engineering | Tehran, Iran | Sep 2013 – Jul 2018 </div>
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<script>
+    function showPage(pageId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        
+        // Remove active class from links
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => link.classList.remove('active'));
+        
+        // Show selected section
+        document.getElementById(pageId).classList.add('active');
+        document.getElementById('link-' + pageId).classList.add('active');
+        
+        // Scroll main to top
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
