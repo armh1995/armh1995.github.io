@@ -49,6 +49,12 @@
         .entry { margin-bottom: 25px; border-left: 4px solid #eee; padding-left: 15px; }
         .entry-title { font-weight: bold; color: var(--clemson-purple); }
         .entry-meta { font-style: italic; font-size: 0.9em; color: #666; }
+        .project-media { margin-top: 12px; min-height: 170px; border: 2px dashed #cfc7da; border-radius: 8px; background: #faf8fc; color: #6a5d78; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px; box-sizing: border-box; font-size: 0.95em; }
+        .project-media.has-image { min-height: 0; border: 0; background: transparent; padding: 0; }
+        .project-media img, .project-media video { width: 100%; max-height: 280px; object-fit: cover; border-radius: 6px; display: block; }
+        .project-media.wireless-image img { width: min(100%, 680px); max-height: 230px; object-fit: contain; margin: 0 auto; }
+        .project-media.square-image { margin-left: auto; margin-right: auto; }
+        .project-media.square-image img { width: 100%; height: auto; max-height: none; object-fit: contain; object-position: center; }
         
         .contact-info { background: var(--panel-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--clemson-orange); margin-top: 30px; }
 
@@ -115,15 +121,30 @@
             <h2>Selected Projects</h2>
             <div class="entry">
                 <div class="entry-title">LLM/VLM-based Basketball Game Analyzer</div>
-                <p>Developing and integrating LLM and VLM for reasoning in sports analytics.</p>
+                <p>
+                    This project transforms basketball broadcast video into structured game intelligence. The pipeline combines player detection, jersey/OCR cues, player tracking, court detection and mapping, and VLM/LLM reasoning to identify who is involved in key plays and what action is happening. In addition to the <a href="https://blog.roboflow.com/identify-basketball-players/#track-players-with-sam2">Roboflow basketball player tracking pipeline</a>, I use OpenAI Whisper to transcribe game audio, apply an LLM to identify the most valuable player, and integrate LLaVA as a VLM to explain important plays in the game. The goal is to move beyond simple highlights and build an analytics layer that can explain the game for coaches, analysts, and fans.
+                </p>
+                <div class="project-media has-image">
+                    <img src="basketball.png" alt="Basketball AI analyzer project preview">
+                </div>
             </div>
             <div class="entry">
-                <div class="entry-title">Resource allocation and scheduling using Deep Reinforcement Learning</div>
-                <p>RL-based scheduling for IoT delay-sensitive applications and streaming systems.</p>
+                <div class="entry-title">Resource Allocation and Scheduling using Reinforcement Learning</div>
+                <p>
+                    This project studies packet scheduling for a wireless transmitter with queue dynamics, channel variation, power cost, buffer cost, overflow risk, and packet loss. I compared learning strategies including Q-learning, post-decision-state learning, stochastic PDS, model-based methods, and Virtual Experince Learning. The goal is to design scheduling policies that keep delay-sensitive traffic stable while using transmission power efficiently, which is central to IoT, wireless streaming, and next-generation network control. <a href="https://ieeexplore.ieee.org/abstract/document/11161698">Link</a>
+                </p>
+                <div class="project-media has-image wireless-image">
+                    <img src="wireless.png" alt="Wireless scheduling project preview">
+                </div>
             </div>
             <div class="entry">
-                <div class="entry-title">360° and Multi-view Video Processing and DASH Streaming</div>
-                <p>Implementing tiled-based and ROI-based encoding and streaming using tools like FFmpeg, Kvazaar, x265, and Dash.js.</p>
+                <div class="entry-title">360° ROI Video Processing and DASH Streaming</div>
+                <p>
+                    This project builds an adaptive 360-degree streaming workflow for immersive video. The system encodes region-of-interest at multiple qualities with tools such as Kvazaar and packages them into DASH representations, then uses a WebXR/Three.js player to switch quality based on the viewer's gaze or headset orientation. The goal is to preserve high visual quality where the user is looking while reducing unnecessary bandwidth outside the field of view, making immersive streaming more practical for wireless and VR environments. <a href="https://ieeexplore.ieee.org/abstract/document/10743777">Link</a>
+                </p>
+                <div class="project-media has-image square-image">
+                    <img src="360.png" alt="360° streaming project preview">
+                </div>
             </div>
         </section>
 
