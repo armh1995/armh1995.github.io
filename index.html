@@ -31,8 +31,8 @@
         main { margin-left: 260px; width: 100%; min-height: 100vh; background: white; }
         
         /* Top Banner Row */
-        .clemson-banner { width: 100%; height: 200px; background: linear-gradient(135deg, var(--clemson-orange), var(--clemson-purple)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; font-weight: bold; overflow: hidden; position: relative; text-align: center; }
-        .clemson-banner img { width: 100%; height: 100%; object-fit: cover; }
+        .clemson-banner { width: 100%; height: clamp(180px, 24vw, 300px); background: linear-gradient(135deg, var(--clemson-orange), var(--clemson-purple)); overflow: hidden; position: relative; }
+        .clemson-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
         .content-container { padding: 40px; max-width: 900px; }
         
@@ -80,14 +80,14 @@
 
 <main>
     <div class="clemson-banner">
-        Clemson University | South Carolina
+        <img src="banner.jpg" alt="Clemson University campus banner">
     </div>
     <div class="content-container">
         <section id="about" class="active">
             <h2>About Me</h2>
             <p>
                 I am a Ph.D. student at <strong>Clemson University</strong> in South Carolina.
-                My research focuses on modeling and designing efficient content representations and reinforcement learning-based scheduling for delivery to end-users.
+                My research focuses on modeling and designing efficient AI enabled Wireless Networks.
             </p>
             <p>
                 Beyond my academic pursuits, I am a passionate football fan and have participated in several sports competitions, including swimming. 
@@ -105,7 +105,7 @@
                 <strong>Contact Me</strong><br>
                 Email: <a href="mailto:amoham4@clemson.edu">amoham4@clemson.edu</a> <br>
                 Phone: +1 (862) 215-1389 <br>
-                Links: <a href="https://scholar.google.com/citations?user=Gx28Bh0AAAAJ&hl=en&authuser=1">Google Scholar</a> | <a href="https://www.linkedin.com/in/alireza-m-hosseini-bb1117200/">LinkedIn</a> 
+                Links: <a href="https://scholar.google.com/citations?user=Gx28Bh0AAAAJ&hl=en&authuser=1">Google Scholar</a> | <a href="https://www.linkedin.com/in/alireza-mohammadhosseini-bb1117200/">LinkedIn</a> 
             </div>
         </section>
 
@@ -152,6 +152,10 @@
                 <div class="entry-title">Clemson University</div>
                 <div class="entry-meta">Ph.D. Student | Clemson, SC | Present </div>
             </div>
+            <div class="entry">
+                <div class="entry-title">New Jersey Institute of Technology</div>
+                <div class="entry-meta">Ph.D. Student | Newark, NJ | Jan 2025 – May 2026 </div>
+            </div>            
             <div class="entry">
                 <div class="entry-title">Amirkabir University of Technology</div>
                 <div class="entry-meta">M.S. in Electrical Engineering | Tehran, Iran | Sep 2018 – Apr 2021 </div>
